@@ -2,12 +2,12 @@ status = "";
 objects = [];
 
 function preload(){
-    img = loadImage("gaming setup.jpg");
+    img = loadImage("dog-cat.png");
 }
 
 function setup(){
-    canvas = createCanvas(450, 500);
-    //canvas.position(300, 200);
+    canvas = createCanvas(650, 430);
+    canvas.position(300, 200);
     canvas.center();
 
     objectDetector = ml5.objectDetector("cocossd", modelLoaded);
@@ -29,7 +29,7 @@ function gotResult(error, results){
 }
 
 function draw(){
-    image(img, 0, 0, 450, 500);
+    image(img, 0, 0, 650, 430);
 
     if(status != ""){
         for(i = 0; i < objects.length; i++){
@@ -40,11 +40,7 @@ function draw(){
             stroke("red");
             rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
             document.getElementById("status").innerHTML = "Objects Detected";
-            document.getElementById("num_of_obj_detected").innerHTML = "There are 3 big objects in this image and only 1 was detected.";
+            document.getElementById("num_of_obj_detected").innerHTML = "There are 3 big objects in this image and all 3 were detected.";
         }
     }
 }
-//95
-//385
-//100
-//400

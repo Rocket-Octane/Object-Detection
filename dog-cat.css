@@ -1,0 +1,17 @@
+body{
+    background-size: cover;
+    background-position: center;
+}
+.back_btn{
+    margin-top: 15px;
+    margin-left: 10px;
+    float: left;
+}
+.heading{
+    margin-right: 70px;
+}
+canvas{
+    border: 5px double black;
+    border-radius: 20px;
+    margin-top: 125px !important;
+}
