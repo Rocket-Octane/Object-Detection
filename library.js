@@ -2,11 +2,11 @@ status = "";
 objects = [];
 
 function preload(){
-    img = loadImage("tv-console.jpg");
+    img = loadImage("library.jpg");
 }
 
 function setup(){
-    canvas = createCanvas(750, 450);
+    canvas = createCanvas(650, 430);
     canvas.position(300, 200);
     canvas.center();
 
@@ -29,24 +29,24 @@ function gotResult(error, results){
 }
 
 function draw(){
-    image(img, 0, 0, 750, 450);
+    image(img, 0, 0, 650, 430);
 
     if(status != ""){
         fill("red");
         percent = floor(objects[0].confidence*100);
-        text(objects[0].label + " " + percent + "%", objects[0].x - 345, objects[0].y - 15);
+        text(objects[0].label + " " + percent + "%", objects[0].x - 1230, objects[0].y - 500);
         noFill();
         stroke("red");
-        rect(objects[0].x - 350, objects[0].y - 30, objects[0].width - 200, objects[0].height - 125);
+        rect(objects[0].x - 1235, objects[0].y - 515, objects[0].width + 80, objects[0].height - 150);
         document.getElementById("status").innerHTML = "Objects Detected";
-        document.getElementById("num_of_obj_detected").innerHTML = "There are 2 big objects in this image and only 2 was detected.";
-        fill("red");
+        document.getElementById("num_of_obj_detected").innerHTML = "There are 2 big objects in this image and both were detected.";
+
         percent = floor(objects[1].confidence*100);
-        text(objects[1].label + " " + percent + "%", objects[1].x, objects[1].y - 185);
+        text(objects[1].label + "s " + percent + "%", objects[1].x - 165, objects[1].y - 240);
         noFill();
         stroke("red");
-        rect(objects[1].x - 5, objects[1].y - 200, objects[1].width - 150, objects[1].height - 138);
+        rect(objects[1].x - 170, objects[1].y - 255, objects[1].width - 700, objects[1].height - 150);
         document.getElementById("status").innerHTML = "Objects Detected";
-        document.getElementById("num_of_obj_detected").innerHTML = "There are 3 big objects in this image and only 2 was detected.";
+        document.getElementById("num_of_obj_detected").innerHTML = "There are 2 big objects in this image and both were detected.";
     }
 }

@@ -35,7 +35,7 @@ function draw(){
         for(i = 0; i < objects.length; i++){
             fill("red");
             percent = floor(objects[i].confidence*100);
-            text(objects[i].label + " " + percent + "%", objects[i].x, objects[i].y);
+            text(objects[i].label + " " + percent + "%", objects[i].x + 5, objects[i].y + 15);
             noFill();
             stroke("red");
             rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
